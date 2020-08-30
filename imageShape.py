@@ -15,8 +15,8 @@ class imageShape:
             lado = int(min(self.width, self.height)/2)                  #Se establece longitud de los lados.
             altura = int((math.sqrt(3)*lado)/2)                         #Se establece altura del triángulo
             pt1 = (int(self.width/2), int(self.height/2) - int(altura/2))
-            pt2 = (self.width/2 - int(lado/2), int(self.height/2) - int(altura/2) + altura)
-            pt3 = (self.width/2 + int(lado/2), int(self.height/2) - int(altura/2) + altura) #Se establece posición de los vertices.
+            pt2 = (int(self.width/2) - int(lado/2), int(self.height/2) - int(altura/2) + altura)
+            pt3 = (int(self.width/2) + int(lado/2), int(self.height/2) - int(altura/2) + altura) #Se establece posición de los vertices.
             pts = np.array([pt1, pt2, pt3], np.int32)
             self.shape = cv2.fillPoly(self.shape, [pts], cyan)          #Se genera triangulo equilatero.
 
